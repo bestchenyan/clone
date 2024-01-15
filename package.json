@@ -8,12 +8,19 @@
     "cz": "git-cz",
     "prepare": "husky install",
     "test": "cross-env NODE_ENV=test nyc mocha",
-    "build": "npm run build:self && npm run build:aio",
-    "build:self": "rollup -c config/rollup.config.js",
-    "build:aio": "rollup -c config/rollup.config.aio.js"
+    "build": "npm run build:self",
+    "build:self": "rollup -c config/rollup.config.js"
+  },
+  "files": [
+    "/dist",
+    "license"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.com",
+    "access": "public"
   },
   "sideEffects": false,
-  "author": "",
+  "author": "yueyanchen",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.23.7",

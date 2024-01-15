@@ -1,11 +1,9 @@
-// import { babel } from "@rollup/plugin-babel";
-import babel from '@rollup/plugin-babel';
-import { version as _version, name } from '../package.json';
-
-const version = _version;
+const babel = require('@rollup/plugin-babel');
+const pak = require('../package.json');
+const version = pak.version;
 
 const banner = `/*!
-* ${name} ${version}
+* ${pak.name} ${version}
 * Licensed under MIT
 */`;
 
@@ -40,7 +38,5 @@ function getCompiler() {
   });
 }
 
-const _banner = banner;
-export { _banner as banner };
-const _getCompiler = getCompiler;
-export { _getCompiler as getCompiler };
+exports.banner = banner;
+exports.getCompiler = getCompiler;

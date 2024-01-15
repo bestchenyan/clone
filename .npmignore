@@ -1,0 +1,5 @@
+# .npmignore
+config
+doc
+src
+test

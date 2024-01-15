@@ -1,20 +1,22 @@
-import { getCompiler, banner as _banner } from './rollup';
+const common = require('./rollup.js');
 
-export const input = 'src/index.js';
-export const plugins = [getCompiler()];
-export const output = [
-  {
-    file: 'dist/index.esm.js',
-    format: 'es',
-    banner: _banner,
-  },
-  {
-    file: 'dist/index.js',
-    format: 'cjs',
-  },
-  {
-    file: 'dist/index.umd.js',
-    format: 'umd',
-    name: 'cloneDeep',
-  },
-];
+module.exports = {
+  input: 'src/index.js',
+  plugins: [common.getCompiler()],
+  output: [
+    {
+      file: 'dist/index.esm.js',
+      format: 'es',
+      banner: common.banner,
+    },
+    {
+      file: 'dist/index.js',
+      format: 'cjs',
+    },
+    {
+      file: 'dist/index.umd.js',
+      format: 'umd',
+      name: 'cloneDeep',
+    },
+  ],
+};
